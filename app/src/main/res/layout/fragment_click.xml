@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.click.ClickFragment">
+
+    <TextView
+        android:id="@+id/tv_country_click"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/shape_tv"
+        android:gravity="center"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_click_totaldead"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_tv"
+        android:gravity="center"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="@+id/tv_country_click"
+        app:layout_constraintStart_toStartOf="@+id/tv_country_click"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_click" />
+
+    <TextView
+        android:id="@+id/tv_click_trecoveed"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_tv"
+        android:gravity="center"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_tconfirmed"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_tconfirmed"
+        app:layout_constraintTop_toBottomOf="@+id/tv_click_tconfirmed" />
+
+    <TextView
+        android:id="@+id/tv_click_tconfirmed"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_tv"
+        android:gravity="center"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_totaldead"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_totaldead"
+        app:layout_constraintTop_toBottomOf="@+id/tv_click_totaldead" />
+
+    <TextView
+        android:id="@+id/tv_click_ndeaths"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_tv"
+        android:gravity="center"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_trecoveed"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_trecoveed"
+        app:layout_constraintTop_toBottomOf="@+id/tv_click_trecoveed" />
+
+    <TextView
+        android:id="@+id/tv_click_nconfirmed"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_tv"
+        android:gravity="center"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_ndeaths"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_ndeaths"
+        app:layout_constraintTop_toBottomOf="@+id/tv_click_ndeaths" />
+
+    <TextView
+        android:id="@+id/tv_click_nrecoverd"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_tv"
+        android:gravity="center"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_nconfirmed"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_nconfirmed"
+        app:layout_constraintTop_toBottomOf="@+id/tv_click_nconfirmed" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#FF7043"
+        android:text="@string/back"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_nrecoverd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_nrecoverd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_click_nrecoverd" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_deaths"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_click_totaldead"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_totaldead"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_totaldead" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_recover"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_click_trecoveed"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_trecoveed"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_trecoveed" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_confirmed2"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_click_tconfirmed"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_tconfirmed"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_tconfirmed" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_death"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_click_ndeaths"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_ndeaths"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_ndeaths" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_confirmed"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_click_nconfirmed"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_nconfirmed"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_nconfirmed" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_recover"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_click_nrecoverd"
+        app:layout_constraintEnd_toEndOf="@+id/tv_click_nrecoverd"
+        app:layout_constraintStart_toStartOf="@+id/tv_click_nrecoverd" />
+</androidx.constraintlayout.widget.ConstraintLayout>

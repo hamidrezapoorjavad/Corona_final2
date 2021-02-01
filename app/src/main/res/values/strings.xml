@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CoronaViruse</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textview">TextView</string>
+    <string name="next">NEXT</string>
+    <string name="search">Search</string>
+    <string name="by_max_dead">By max</string>
+    <string name="by_min_dead">By Min </string>
+    <string name="by_max_sick">max new death</string>
+    <string name="total_death">TOTAL DEATH</string>
+    <string name="total_confirmed">TOTAL CONFIRMED</string>
+    <string name="total_recovered">TOTAL RECOVERED</string>
+    <string name="coronades">coronaDes</string>
+    <string name="total_death1">total death</string>
+    <string name="country_flag">country flag</string>
+    <string name="textview1">TextView</string>
+    <string name="new_death">New Death</string>
+    <string name="back">back</string>
+    <string name="new_recover">New Recover</string>
+    <string name="new_confirmed">New Confirmed</string>
+    <string name="total_confirmed2">Total Confirmed</string>
+    <string name="total_recover">Total Recover</string>
+    <string name="total_deaths">Total Deaths</string>
+    <string name="hamid_reza_pourjavad">Hamid Reza Pourjavad</string>
+</resources>

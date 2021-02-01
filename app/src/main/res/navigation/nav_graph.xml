@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.corona_final.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_totalDataFragment"
+            app:destination="@id/totalDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/totalDataFragment"
+        android:name="com.example.corona_final.fragments.TotalDataFragment"
+        android:label="fragment_total_data"
+        tools:layout="@layout/fragment_total_data" >
+        <action
+            android:id="@+id/action_totalDataFragment_to_countryFragment"
+            app:destination="@id/countryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryFragment"
+        android:name="com.example.corona_final.fragments.country.CountryFragment"
+        android:label="fragment_country"
+        tools:layout="@layout/fragment_country" >
+        <action
+            android:id="@+id/action_countryFragment_to_clickFragment"
+            app:destination="@id/clickFragment"
+            app:popUpTo="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clickFragment"
+        android:name="com.example.corona_final.fragments.click.ClickFragment"
+        android:label="fragment_click"
+        tools:layout="@layout/fragment_click" >
+        <argument android:name="id" />
+    </fragment>
+</navigation>
