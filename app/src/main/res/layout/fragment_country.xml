@@ -1,70 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.country.CountryFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <EditText
-        android:id="@+id/edt_search"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:autofillHints=""
-        android:background="@drawable/shape_edt"
-        android:ems="10"
-        android:hint="@string/search"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <Button
-        android:id="@+id/btn_max"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#009688"
-        android:text="@string/by_max_dead"
-        app:layout_constraintEnd_toEndOf="@+id/edt_search"
-        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+        <variable
+            name="viewModel"
+            type="com.example.corona_final.fragments.country.CountryViewModel" />
 
-    <Button
-        android:id="@+id/btn_min"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:backgroundTint="#009688"
-        android:text="@string/by_min_dead"
-        app:layout_constraintEnd_toStartOf="@+id/btn_max"
-        app:layout_constraintStart_toEndOf="@+id/btn_max_patients"
-        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+    </data>
 
-    <Button
-        android:id="@+id/btn_max_patients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#009688"
-        android:text="@string/by_max_sick"
-        app:layout_constraintStart_toStartOf="@+id/edt_search"
-        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_country"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_min" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_collaps"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsinfg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue_900">
+
+                    <EditText
+                        android:id="@+id/edt_search"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginEnd="10dp"
+                        android:autofillHints=""
+                        android:background="@drawable/shape_edt"
+                        android:ems="10"
+                        android:hint="@string/search"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/btn_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="#00796B"
+                        android:text="@string/by_max_dead"
+                        app:layout_constraintEnd_toEndOf="@+id/edt_search"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+
+                    <Button
+                        android:id="@+id/btn_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#00796B"
+                        android:text="@string/by_min_dead"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_max"
+                        app:layout_constraintStart_toEndOf="@+id/btn_max_patients"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+
+                    <Button
+                        android:id="@+id/btn_max_patients"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="#00796B"
+                        android:text="@string/by_max_sick"
+                        app:layout_constraintStart_toStartOf="@+id/edt_search"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+
+                    <!--                <TextView-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_marginStart="10dp"-->
+                    <!--                    android:layout_marginBottom="10dp"-->
+                    <!--                    android:text="@string/corona_virus"-->
+                    <!--                    android:textColor="@color/white"-->
+                    <!--                    android:textStyle="bold"-->
+                    <!--                    android:textSize="30sp"-->
+                    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                    app:layout_constraintStart_toStartOf="parent" />-->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:layout_collapseMode="pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:title="@string/corona_virus"
+                    app:titleTextColor="@color/white" />
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -23,4 +23,6 @@
     <string name="total_recover">Total Recover</string>
     <string name="total_deaths">Total Deaths</string>
     <string name="hamid_reza_pourjavad">Hamid Reza Pourjavad</string>
+    <string name="corona_virus">Corona Virus</string>
+    <string name="refresh">refresh</string>
 </resources>

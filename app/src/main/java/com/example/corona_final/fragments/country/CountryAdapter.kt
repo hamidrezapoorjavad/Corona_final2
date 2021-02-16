@@ -22,9 +22,10 @@ class CountryAdapter(private val context: Context , val itemClick : (country :Co
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
         val item = currentList[position]
-        holder.binding.tvCountry.text = item.country
-        holder.binding.tvIdeath.text = item.totalDeaths.toString()
-        holder.binding.tvNewDeath.text = item.newDeaths.toString()
+        holder.binding.data = item
+//        holder.binding.tvCountry.text = item.country
+//        holder.binding.tvIdeath.text = item.totalDeaths.toString()
+//        holder.binding.tvNewDeath.text = item.newDeaths.toString()
         holder.itemView.setOnClickListener { itemClick.invoke(item)}
 
 
@@ -44,7 +45,4 @@ class CountryAdapter(private val context: Context , val itemClick : (country :Co
         }
 
     }
-}
-interface CountryClickListener {
-    fun onClick (item:Country)
 }

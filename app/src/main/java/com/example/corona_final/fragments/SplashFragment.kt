@@ -26,7 +26,7 @@ lateinit var bindind :FragmentSplashBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Handler(Looper.getMainLooper()).postDelayed({findNavController()
-            .navigate(SplashFragmentDirections.actionSplashFragmentToTotalDataFragment())},7000)
+            .navigate(SplashFragmentDirections.actionSplashFragmentToTotalDataFragment())},4000)
     }
 
     }

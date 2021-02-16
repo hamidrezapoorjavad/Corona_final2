@@ -1,72 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tv_death"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:layout_margin="15dp"
-    android:background="#80DEEA">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tv_country"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/shape_tv_item"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="data"
+            type="com.example.corona_final.data.Country" />
 
-    <TextView
-        android:id="@+id/tv_deathstring"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/total_death1"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_ideath"
-        app:layout_constraintTop_toBottomOf="@+id/tv_country" />
+    </data>
 
-    <TextView
-        android:id="@+id/tv_ideath"
-        android:layout_width="0dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/shape_tv_item"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_deathstring"
-        tools:text="TextView" />
+        android:foreground="?android:attr/selectableItemBackground"
+        android:backgroundTint="#90CAF9"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        android:elevation="10dp">
 
-    <TextView
-        android:id="@+id/tv_new_death"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/textview"
-        android:background="@drawable/shape_tv_item"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ideath" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tv_death"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="15dp"
+            android:background="#80DEEA">
 
-    <TextView
-        android:id="@+id/tv_st_newdeath"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/new_death"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_new_death"
-        app:layout_constraintEnd_toEndOf="@+id/tv_new_death"
-        app:layout_constraintStart_toStartOf="@+id/tv_new_death" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_country"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape_tv_item"
+                android:text="@{data.country}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_deathstring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/total_death1"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_ideath"
+                app:layout_constraintTop_toBottomOf="@+id/tv_country" />
+
+            <TextView
+                android:id="@+id/tv_ideath"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape_tv_item"
+                android:text="@{data.totalDeaths.toString()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deathstring" />
+
+            <TextView
+                android:id="@+id/tv_new_death"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape_tv_item"
+                android:text="@{data.newDeaths.toString()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ideath" />
+
+            <TextView
+                android:id="@+id/tv_st_newdeath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_death"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_new_death"
+                app:layout_constraintEnd_toEndOf="@+id/tv_new_death"
+                app:layout_constraintStart_toStartOf="@+id/tv_new_death" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
 

@@ -1,8 +1,11 @@
 package com.example.corona_final.data
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Country(
     @SerializedName("Country")
     val country: String?,
@@ -18,8 +21,7 @@ data class Country(
     val newDeaths: Int?,
     @SerializedName("NewRecovered")
     val newRecovered: Int?,
-    @SerializedName("Premium")
-    val premium: Premium?,
+
     @SerializedName("Slug")
     val slug: String?,
     @SerializedName("TotalConfirmed")
@@ -28,4 +30,4 @@ data class Country(
     val totalDeaths: Int?,
     @SerializedName("TotalRecovered")
     val totalRecovered: Int?
-)
+):Parcelable
